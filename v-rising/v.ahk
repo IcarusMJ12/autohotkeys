@@ -1,5 +1,5 @@
 mouselook_on := false
-ctrl_down := false
+context_wheel := false
 
 z::
 If (GetKeyState("'")) {
@@ -48,10 +48,10 @@ send, =
 return
 
 Ctrl::
-global ctrl_down
+global context_wheel
 global mouselook_on
-if (!ctrl_down) {
-	ctrl_down := true
+if (!context_wheel) {
+	context_wheel := true
 	If (GetKeyState("'")) {
 		mouselook_on := true
 		Send {' up}
@@ -64,10 +64,36 @@ send {/ down}
 return
 
 Ctrl Up::
-global ctrl_down
+global context_wheel
 global mouselook_on
-ctrl_down := false
+context_wheel := false
 send {/ up}
+if (mouselook_on) {
+	send, z
+}
+return
+
+Shift::
+global context_wheel
+global mouselook_on
+if (!context_wheel) {
+	context_wheel := true
+	If (GetKeyState("'")) {
+		mouselook_on := true
+		Send {' up}
+	} Else {
+		global mouselook_on
+		mouselook_on := false
+	}
+}
+send {. down}
+return
+
+Shift Up::
+global context_wheel
+global mouselook_on
+context_wheel := false
+send {. up}
 if (mouselook_on) {
 	send, z
 }
