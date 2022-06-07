@@ -98,3 +98,5 @@ if (mouselook_on) {
 	send, z
 }
 return
+
+End::Suspend

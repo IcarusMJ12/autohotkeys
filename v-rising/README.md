@@ -26,3 +26,4 @@ The ones the AutoHotkey uses **have** to be remapped as below; others are just m
 | Map Panel | ] | AutoHotkey M |
 | Vampire Powers Panel | = | AutoHotkey J |
 | V Blood | \ | AutoHotkey O |
+| | End | Suspend AutoHotkeys (for chat, renaming) |
